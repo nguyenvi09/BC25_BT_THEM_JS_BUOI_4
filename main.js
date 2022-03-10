@@ -196,3 +196,62 @@ document.getElementById("ngaySau").onclick = function() {
     document.getElementById("ketQuaTinhNgaySau").innerHTML = "Sau ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
 
 };
+
+
+/**
+ * BT2:
+ * - Đầu vào: tháng và năm do người dùng nhập
+ * 
+ * - Xử lý: 
+ * B1: kiểm tra năm là năm nhuận hay thường
+ * B2: nếu nhuận thì tháng 2 có 29 ngày - thường thì có 28 ngày
+ * B3: dùng switch case lưu các giá trị của tháng 
+ * 
+ * - Đầu ra: in kết quả ra màn hình
+ */
+
+document.getElementById("checkDay").onclick = function() {
+    var month = document.getElementById("month").value *1;
+    var year = document.getElementById("year").value *1;
+
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
+        switch (month){
+            case 1: day = 31; break;
+            case 3: day = 31; break;
+            case 5: day = 31; break;
+            case 7: day = 31; break;
+            case 8: day = 31; break;
+            case 10: day = 31; break;
+            case 12: day = 31; break;
+
+            case 4: day = 30; break;
+            case 6: day = 30; break;
+            case 9: day = 30; break;
+            case 11: day = 30; break;
+
+            case 2: day = 29; break;
+        };
+        document.getElementById("result").innerHTML = "Tháng " + month + " Năm " + year + " có " + day + " Ngày";
+    } else {
+        switch (month){
+            case 1: day = 31; break;
+            case 3: day = 31; break;
+            case 5: day = 31; break;
+            case 7: day = 31; break;
+            case 8: day = 31; break;
+            case 10: day = 31; break;
+            case 12: day = 31; break;
+
+            case 4: day = 30; break;
+            case 6: day = 30; break;
+            case 9: day = 30; break;
+            case 11: day = 30; break;
+
+            case 2: day = 28; break;
+        };
+        document.getElementById("result").innerHTML = "Tháng " + month + " Năm " + year + " có " + day + " Ngày";
+
+    };
+};
+
+
