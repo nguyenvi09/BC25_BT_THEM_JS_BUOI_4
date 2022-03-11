@@ -326,3 +326,32 @@ document.getElementById("cachDocSo").onclick = function() {
 }
 
 
+/**
+ * BT4: 
+ * - Đầu vào: tạo 4 biến lưu giá trị tọa độ
+ * 
+ * - Xử lý: 
+ * B1: tạo biến lưu giá trị tính khoảng cách từng bạn sinh viên đến trường
+ * bằng công thức sqrt((xB - xA)*(xB - xA) + (yB - yA)*(yB - yA))
+ * B2: so sánh độ dài tìm ra ai xa trường nhất . Ta bỏ qua trường hợp = 
+ * vì nếu tọa độ bằng nhau ta không cần so sánh độ dài nữa
+ * 
+ * - Đầu ra: in kết quả
+ */
+
+var truongHoc = [3, 2];
+var tung = [1, 1];
+var lan = [11, 15];
+var khanh = [14, 36];
+
+var nhaTungDenTruong = Math.sqrt((tung[0] - truongHoc[0])*(tung[0] - truongHoc[0]) + (tung[1] - truongHoc[1])*(tung[1] - truongHoc[1]));
+var nhaLanDenTruong = Math.sqrt((lan[0] - truongHoc[0])*(lan[0] - truongHoc[0]) + (lan[1] - truongHoc[1])*(lan[1] - truongHoc[1]));
+var nhaKhanhDenTruong = Math.sqrt((khanh[0] - truongHoc[0])*(khanh[0] - truongHoc[0]) + (khanh[1] - truongHoc[1])*(khanh[1] - truongHoc[1]));
+
+if (nhaTungDenTruong > nhaLanDenTruong && nhaTungDenTruong > nhaKhanhDenTruong){
+    console.log("Nhà Tùng xa trường nhất");
+}else if(nhaLanDenTruong > nhaTungDenTruong && nhaLanDenTruong > nhaKhanhDenTruong){
+    console.log("Nhà Lan xa trường nhất");
+}else {
+    console.log("Nhà Khanh xa trường nhất");
+}
