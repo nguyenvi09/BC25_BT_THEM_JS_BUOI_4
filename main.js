@@ -135,8 +135,6 @@ document.getElementById("ngayTruoc").onclick = function() {
 
 
 function tinhSoNgayTrongThang(thang, nam) {
-    thang = document.getElementById("thang").value *1;
-    nam = document.getElementById("nam").value *1;
 
     if ((nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0) {
         switch (thang){
@@ -191,8 +189,8 @@ document.getElementById("ngaySau").onclick = function() {
             nam++;
             document.getElementById("ketQuaTinhNgaySau").innerHTML = "Sau ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
 
-        }
-    }
+        };
+    };
     document.getElementById("ketQuaTinhNgaySau").innerHTML = "Sau ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
 
 };
@@ -291,7 +289,7 @@ document.getElementById("cachDocSo").onclick = function() {
     
         if( hangChuc == 0 &&  hangDonVi != 0 ){
             hangChuc = "lẻ";
-        }
+        };
 
         switch(hangChuc){
             case 0: hangChuc = ""; break; 
@@ -354,4 +352,4 @@ if (nhaTungDenTruong > nhaLanDenTruong && nhaTungDenTruong > nhaKhanhDenTruong){
     console.log("Nhà Lan xa trường nhất");
 }else {
     console.log("Nhà Khanh xa trường nhất");
-}
+};
