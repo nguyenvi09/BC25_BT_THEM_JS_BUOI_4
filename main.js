@@ -28,6 +28,7 @@ document.getElementById("ngayTruoc").onclick = function() {
     var ngay = document.getElementById("ngay").value *1;
     var thang = document.getElementById("thang").value *1;
     var nam = document.getElementById("nam").value *1;
+    var ketQuaTNT;
 
     // kiểm tra có phải năm nhuận hay không?
     if ((nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0) {
@@ -51,7 +52,7 @@ document.getElementById("ngayTruoc").onclick = function() {
 
                 case 2: ngay = 29; break;
             };
-            document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
+            
         }else{
             ngay--;
             if(ngay == 0){
@@ -72,12 +73,7 @@ document.getElementById("ngayTruoc").onclick = function() {
     
                     case 2: ngay = 29; break;
                 };
-            document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
-
-            }
-            document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
-
-
+            };
         };
     }else{
         if(thang == 1 && ngay == 1){
@@ -99,9 +95,6 @@ document.getElementById("ngayTruoc").onclick = function() {
 
                 case 2: ngay = 28; break;
             };
-            document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
-
-
         }else{
             ngay--;
             if(ngay == 0){
@@ -122,15 +115,13 @@ document.getElementById("ngayTruoc").onclick = function() {
     
                     case 2: ngay = 28; break;
                 };
-                document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
-
-
-            }
-            document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
-
-
+            };
         };
-    }
+    };
+    ketQuaTNT = ngay + " - " + thang +  " - " + nam;
+
+    document.getElementById("ketQuaTinhNgayTruoc").innerHTML = "Trước ngày nhập là: " + ketQuaTNT;
+
 };
 
 
@@ -179,6 +170,7 @@ document.getElementById("ngaySau").onclick = function() {
     var ngay = document.getElementById("ngay").value *1;
     var thang = document.getElementById("thang").value *1;
     var nam = document.getElementById("nam").value *1;
+    // var ketQuaTNS;
 
     ngay++;
     if (ngay > tinhSoNgayTrongThang(thang, nam)){
@@ -187,11 +179,12 @@ document.getElementById("ngaySau").onclick = function() {
         if(thang > 12){
             thang = 1;
             nam++;
-            document.getElementById("ketQuaTinhNgaySau").innerHTML = "Sau ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
-
         };
     };
-    document.getElementById("ketQuaTinhNgaySau").innerHTML = "Sau ngày nhập là: " + ngay + " - " + thang +  " - " + nam;
+    ketQuaTNS = ngay + " - " + thang +  " - " + nam;
+
+    
+    document.getElementById("ketQuaTinhNgaySau").innerHTML = "Sau ngày nhập là: " + ketQuaTNS;
 
 };
 
@@ -211,6 +204,7 @@ document.getElementById("ngaySau").onclick = function() {
 document.getElementById("checkDay").onclick = function() {
     var month = document.getElementById("month").value *1;
     var year = document.getElementById("year").value *1;
+    var result;
 
     if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
         switch (month){
@@ -229,7 +223,6 @@ document.getElementById("checkDay").onclick = function() {
 
             case 2: day = 29; break;
         };
-        document.getElementById("result").innerHTML = "Tháng " + month + " Năm " + year + " có " + day + " Ngày";
     } else {
         switch (month){
             case 1: day = 31; break;
@@ -247,9 +240,11 @@ document.getElementById("checkDay").onclick = function() {
 
             case 2: day = 28; break;
         };
-        document.getElementById("result").innerHTML = "Tháng " + month + " Năm " + year + " có " + day + " Ngày";
-
     };
+    result ="Tháng " + month + " Năm " + year + " có " + day + " Ngày";
+
+    document.getElementById("result").innerHTML = result;
+
 };
 
 /**
@@ -269,6 +264,7 @@ document.getElementById("checkDay").onclick = function() {
 
 document.getElementById("cachDocSo").onclick = function() {
     var so = document.getElementById("so").value;
+    var ketQuaCachDocSo;
     
     if( so >= 100 && so <= 999){
         var hangTram = Math.floor(so / 100);
@@ -317,10 +313,10 @@ document.getElementById("cachDocSo").onclick = function() {
             case 8: hangDonVi = "tám"; break;
             case 9: hangDonVi = "chín"; break;
         };
-        document.getElementById("ketQuaCachDocSo").innerHTML = hangTram + " " + hangChuc + " " + hangDonVi;
     };
+    ketQuaCachDocSo = hangTram + " " + hangChuc + " " + hangDonVi;
 
-    
+    document.getElementById("ketQuaCachDocSo").innerHTML = ketQuaCachDocSo;
 }
 
 
